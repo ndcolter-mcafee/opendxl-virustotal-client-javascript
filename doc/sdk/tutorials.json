@@ -1,0 +1,19 @@
+{
+  "overview": {
+    "title": "Overview"
+  },
+  "installation": {
+    "title": "Library Installation"
+  },
+  "samples": {
+    "title": "Samples",
+    "children": {
+      "basic-domain-report-example": {
+        "title": "Basic Domain Report Example"
+      },
+      "basic-file-report-example": {
+        "title": "Basic File Report Example"
+      }
+    }
+  }
+}

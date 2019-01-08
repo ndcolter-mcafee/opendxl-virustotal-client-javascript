@@ -1,0 +1,64 @@
+{
+  "name": "@opendxl/dxl-vtapi-client",
+  "version": "0.1.0",
+  "author": "McAfee, LLC",
+  "description": "OpenDXL VirusTotal Javascript Service",
+  "license": "Apache-2.0",
+  "keywords": [
+    "opendxl",
+    "dxl",
+    "mcafee",
+    "client"
+  ],
+  "files": [
+    "bin",
+    "lib",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "dependencies": {
+    "@opendxl/dxl-bootstrap": "^0.1.0",
+    "inherits": "^2.0.3",
+    "moment": "^2.3.0",
+    "standard": "^12.0.1"
+  },
+  "devDependencies": {
+    "archiver": "^2.1.1",
+    "chai": "^4.1.2",
+    "expect": "^1.20.2",
+    "jsdoc": "^3.5.5",
+    "jshint": "^2.9.5",
+    "mocha": "^4.1.0",
+    "rimraf": "^2.6.2",
+    "snazzy": "^7.0.0"
+  },
+  "eslintConfig": {},
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/opendxl/opendxl-vtapi-service-javascript.git"
+  },
+  "bin": {
+    "vtapiservice": "./bin/vtapiservice.js"
+  },
+  "scripts": {
+    "predist": "npm install && rimraf *.tgz",
+    "dist": "npm pack && npm run doc && node scripts/dist.js",
+    "test": "mocha --recursive",
+    "lint": "npm run lint:jshint && npm run lint:standard",
+    "lint:jshint": "jshint lib sample scripts",
+    "lint:standard": "standard | snazzy",
+    "ci": "npm run lint",
+    "predoc": "rimraf out/jsdoc",
+    "doc": "jsdoc -c ./doc/conf.json doc/index.md -r lib/ -u doc/sdk -d out/jsdoc",
+    "postdoc": "node scripts/postdoc.js"
+  },
+  "standard": {
+    "env": [
+      "mocha"
+    ]
+  }
+}
